@@ -135,7 +135,7 @@ class Playlist:
         self.author = updated_author
 
     def change_description_playlist(self, updated_description):
-        self.artist = updated_description
+        self.description = updated_description
 
     def add_track_to_playlist(self, track_object, user_object):
         # проверка возможности добавления треков в плейлист для других пользователей
