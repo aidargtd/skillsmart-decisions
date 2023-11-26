@@ -53,8 +53,8 @@ class Puer(Tea):
         self.recommendation_toppings = toppings  # Запрашивает значение True or False
 
     def calculate_cost_of_puer(self):
-        # Пример формулы для расчета рейтинга на основе возраста и типа листьев
-        rating = self.aging_years * 0.8 + (len(self.type_of_leaves) - 5) * 0.2
+        # Пример формулы для расчета рейтинга на основе возраста и процента содержания кофеина
+        rating = ((self.aging_years * 0.1) + self.caffeine_content) / 15
         # Пусть рейтинг * 50$ = цена за 100 грамм чая
         return f"Цена чая: {rating * 50}$ за сто грамм"
 
