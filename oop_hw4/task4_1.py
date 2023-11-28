@@ -1,4 +1,55 @@
 """
+ Реализуйте композицию для двух иерархий классов из предыдущего занятия. Напишите код для работы
+ с объектами соответствующих классов, из которого наглядно понятна идея композиции.
+"""
+
+
+# Родительский класс - чай
+class Tea:
+    def __init__(self, tea_type, origin, color, brew_method, percent_of_caffeine, type_leaves):
+        self.type_of_tea = tea_type
+        self.origin = origin
+        self.color_of_brew = color
+        self.brewing_method = brew_method
+        self.caffeine_content = percent_of_caffeine
+        self.type_of_leaves = type_leaves
+
+
+# Дочерний класс для класса "чай", Зеленый чай
+class Puer(Tea):
+    def __init__(self, tea_type, origin, color, brew_method, percent_of_caffeine, type_leaves, aging_years):
+        super().__init__(tea_type, origin, color, brew_method, percent_of_caffeine, type_leaves)
+        self.aging_years = aging_years  # Возраст пуэра в годах
+
+    def calculate_cost_of_puer(self):
+        rating = ((self.aging_years * 0.1) + self.caffeine_content) / 30
+        return f"Цена чая: {rating * 10}$ за сто грамм"
+
+
+# Родительский класс - аксессуар для чая
+class TeaAccessory:
+    def __init__(self, name, material):
+        self.name = name
+        self.material = material
+
+
+# Дочерний класс для класса "аксессуар для чая", Заварочный чайник
+class Teapot(TeaAccessory):
+    def __init__(self, name, material, volume, tea_amount):
+        super().__init__(name, material)
+        self.volume = volume
+        self.tea_amount = tea_amount
+
+    def calculate_water_to_tea_ratio(self):
+        # Рассчитываем соотношение воды к количеству чая
+        water_to_tea = self.volume / self.tea_amount
+        if 40 < water_to_tea < 60:
+            return 'Все в норме!'
+        else:
+            return 'Надо поменять соотношения'
+
+
+"""
 В прошлом дз я делал два класса Tea и TeaAccessory, но я не совсем понимаю, как сделать
 их комопозицию, да и не совсем понимаю зачем.
 Так что я использовал предыдущее дз, где я уже делал комопзицию функций.
