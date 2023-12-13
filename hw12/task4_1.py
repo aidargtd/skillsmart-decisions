@@ -6,20 +6,6 @@
 import os
 
 
-def f(path, file_ext, flag):
-    ans = []
-    list1 = []
-    list2 = []
-    if not os.path.exists(path):
-        return 'Указанный каталог не существует'
-    for i in os.listdir(path):
-        if os.path.isdir(os.path.join(path, i)):
-            return 'В вашем каталоге присутствуют подкаталоги'
-
-
-import os
-
-
 def list_files_and_directories(path, file_ext, flag):
     list1 = []
     list2 = []
