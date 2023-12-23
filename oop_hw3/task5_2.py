@@ -12,6 +12,7 @@
 
 class Tea:
     """Родительский класс - чай"""
+
     def __init__(self, tea_type, origin, color, brew_method, percent_of_caffeine, type_leaves):
         self.type_of_tea = tea_type
         self.origin = origin
@@ -23,6 +24,7 @@ class Tea:
 
 class BlackTea(Tea):
     """Дочерний класс для класса "чай", Черный чай"""
+
     def __init__(self, tea_type, origin, color, brew_method,
                  percent_of_caffeine, type_leaves, strength):
         super().__init__(tea_type, origin, color, brew_method,
@@ -34,6 +36,7 @@ class BlackTea(Tea):
         self.TIME_SEC_HARD_STRENGTH_TEA = 180
 
     def determine_brew_time_in_seconds(self):
+        """Метод для подсчета времени заваривания чая"""
         if self.strength == 0:
             return self.TIME_ZERO_STRENGTH_TEA_SEC
         elif 0 < self.strength < 4:
@@ -64,6 +67,7 @@ class Puer(Tea):
         self.TOPPING_RASPBERRY = 4
 
     def calculate_cost_of_puer_dollars(self):
+        """Метод для подсчета стоимости чая"""
         # Пример формулы для расчета рейтинга на основе возраста и процента содержания кофеина
         rating = ((self.aging_years * 0.1) + self.caffeine_content) / 15
         # Пусть рейтинг * 50$ = цена за 100 грамм чая
