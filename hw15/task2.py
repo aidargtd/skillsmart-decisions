@@ -11,10 +11,10 @@ def f(values, n):
             d[i] += 1
             if d[i] == n:
                 ans.add(i)
-            elif d[i] > n and (i in ans):
-                ans.remove(i)
         else:
             d[i] = 1
+            if d[i] == n:
+                ans.add(i)
     return ans
 
 
