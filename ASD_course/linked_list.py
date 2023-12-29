@@ -115,32 +115,29 @@ def f(s1, s2):
 class Tests(unittest.TestCase):
     def test_del(self):
         s_list = LinkedList()
-        # Удаление из пустого списка
+
         s_list.delete(10)
         self.assertIsNone(s_list.head)
         self.assertIsNone(s_list.tail)
 
-        # удаление одного элемента
         s_list.add_in_tail(Node(1))
         s_list.add_in_tail(Node(2))
         s_list.delete(1)
         self.assertEqual(s_list.head.value, 2)
 
-        # удаление элементов с одинаковым значением
         s_list.add_in_tail(Node(4))
         s_list.add_in_tail(Node(4))
         s_list.delete(4, all=True)
         self.assertEqual(s_list.head.value, 2)
         self.assertIsNone(s_list.head.next)
 
-        # Проверка при удалении последнего элемента
         s_list.delete(2)
         self.assertIsNone(s_list.head)
         self.assertIsNone(s_list.tail)
 
     def test_clean_list(self):
         s_list = LinkedList()
-        # Очистка пустого списка
+
         s_list.clean()
         self.assertIsNone(s_list.head)
         self.assertIsNone(s_list.tail)
@@ -154,7 +151,6 @@ class Tests(unittest.TestCase):
     def test_find_all(self):
         s_list = LinkedList()
 
-        # Поиск в пустом списке
         self.assertEqual(len(s_list.find_all(1)), 0)
 
         s_list.add_in_tail(Node(1))
