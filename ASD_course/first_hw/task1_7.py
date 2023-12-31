@@ -1,5 +1,5 @@
 import unittest
-from ASD_course.first_hw.all_tasks_wo_7 import Node, LinkedList
+from ASD_course.first_hw.all_tasks import Node, LinkedList
 
 
 class Tests(unittest.TestCase):
