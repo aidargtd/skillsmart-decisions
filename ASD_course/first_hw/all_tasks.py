@@ -177,6 +177,6 @@ class Tests(unittest.TestCase):
         self.assertEqual(s_list.head.next.value, 2)
         self.assertEqual(s_list.tail.value, 2)
 
-
-if __name__ == '__main__':
-    unittest.main()
+#
+# if __name__ == '__main__':
+#     unittest.main()
