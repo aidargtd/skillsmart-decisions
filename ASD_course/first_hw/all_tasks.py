@@ -1,6 +1,7 @@
 """Tasks 1.1 - 1.8"""
 import unittest
 
+
 class Node:
     def __init__(self, v):
         self.value = v
@@ -21,7 +22,7 @@ class LinkedList:
 
     def print_all_nodes(self):
         node = self.head
-        while node != None:
+        while node is not None:
             print(node.value)
             node = node.next
 
@@ -110,7 +111,6 @@ def f(s1, s2):
             node1 = node1.next
             node2 = node2.next
     return ans
-
 
 
 class Tests(unittest.TestCase):
