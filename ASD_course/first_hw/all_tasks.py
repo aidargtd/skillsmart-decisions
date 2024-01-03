@@ -39,7 +39,7 @@ class LinkedList:
         ans = []
         while node is not None:
             if node.value == val:
-                ans.append(node.value)
+                ans.append(node)
             node = node.next
         return ans
 
@@ -110,4 +110,3 @@ def f(s1, s2):
             node1 = node1.next
             node2 = node2.next
     return ans
-
